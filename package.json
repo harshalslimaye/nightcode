@@ -1,0 +1,22 @@
+{
+  "name": "nightcode",
+  "version": "1.0.0",
+  "workspaces": [
+    "packages/*"
+  ],
+  "description": "",
+  "scripts": {
+    "dev:cli": "bun run --watch packages/cli/src/index.tsx"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harshalslimaye/nightcode.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/harshalslimaye/nightcode/issues"
+  },
+  "homepage": "https://github.com/harshalslimaye/nightcode#readme"
+}
