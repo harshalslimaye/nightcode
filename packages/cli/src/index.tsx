@@ -1,6 +1,6 @@
 import { createCliRenderer, Text, TextAttributes } from "@opentui/core";
 import { createRoot } from "@opentui/react";
-import { Header } from "./components/Header";
+import { Header } from "./components/header";
 import { InputBar } from "./components/input-bar";
 
 function App() {
@@ -21,5 +21,8 @@ function App() {
   );
 }
 
-const renderer = await createCliRenderer();
+const renderer = await createCliRenderer({
+  targetFps: 60,
+  exitOnCtrlC: false,
+});
 createRoot(renderer).render(<App />);
