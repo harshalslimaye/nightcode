@@ -132,10 +132,10 @@ export function InputBar({ onSubmit, disabled }: Props) {
 
     return (
         <box width="100%" alignItems="center">
-            <box border={['left']} borderColor={colors.background}>
+                <box border={['left']} borderColor={colors.background} width="100%">
                 <box
                     position="relative"
-                    justifyContent="center"
+                    justifyContent="flex-start"
                     paddingX={2}
                     paddingY={1}
                     backgroundColor={colors.surface}
@@ -166,6 +166,8 @@ export function InputBar({ onSubmit, disabled }: Props) {
                         keyBindings={TEXTAREA_KEY_BINDINGS}
                         onContentChange={handleTextAreaContentChange}
                         placeholder={`Ask anything..."Fix a bug in the database"`}
+                        width="100%"
+                        flexGrow={1}
                     ></textarea>
                     <StatusBar />
                 </box>
