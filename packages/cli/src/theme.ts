@@ -188,6 +188,23 @@ export const THEMES: Theme[] = [
             thinkingBorder: "#2B1533",
             dimSeparator: "#4B3347"
         }
+    },
+    {
+        name: "Saffron Dark",
+        colors: {
+            primary: "#CC785C",
+            planMode: "#E09B6F",
+            selection: "#B89176",
+            thinking: "#9D7DB8",
+            success: "#82C4A0",
+            error: "#E07A7A",
+            info: "#7FB5C9",
+            background: "#1A1511",
+            surface: "#2B2420",
+            dialogSurface: "#120F0C",
+            thinkingBorder: "#3A3128",
+            dimSeparator: "#4A4139"
+        }
     }
 ]
 
