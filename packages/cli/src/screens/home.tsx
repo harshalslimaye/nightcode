@@ -8,7 +8,7 @@ export function Home() {
 
     const handleSubmit = useCallback(
         (text: string) => {
-            navigate(`/session/new`, { state: { message: text } });
+            navigate(`/sessions/new`, { state: { message: text } });
         },
         [navigate]
     );

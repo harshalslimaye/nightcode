@@ -6,7 +6,8 @@
   ],
   "description": "",
   "scripts": {
-    "dev:cli": "bun run --watch packages/cli/src/index.tsx"
+    "dev:cli": "bun run --watch packages/cli/src/index.tsx",
+    "dev:server": "bun run --hot packages/server/src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/harshalslimaye/nightcode/issues"
   },
-  "homepage": "https://github.com/harshalslimaye/nightcode#readme"
+  "homepage": "https://github.com/harshalslimaye/nightcode#readme",
+  "dependencies": {
+    "zod": "^4.4.3"
+  }
 }
