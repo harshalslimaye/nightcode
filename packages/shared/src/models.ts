@@ -13,19 +13,19 @@ type SupportedChatModelDefinition = {
 
 export const SUPPORTED_CHAT_MODELS = [
     {
-        id: "claude-sonnet-5",
-        provider: "anthropic",
-        pricing: {
-            inputUsdPerMillionTokens: 2,
-            outputUsdPerMillionTokens: 10,
-        },
-    },
-    {
         id: "claude-haiku-4-5",
         provider: "anthropic",
         pricing: {
             inputUsdPerMillionTokens: 1,
             outputUsdPerMillionTokens: 5,
+        },
+    },
+    {
+        id: "claude-sonnet-5",
+        provider: "anthropic",
+        pricing: {
+            inputUsdPerMillionTokens: 2,
+            outputUsdPerMillionTokens: 10,
         },
     },
     {

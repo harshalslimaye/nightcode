@@ -1,19 +1,36 @@
 import { TextAttributes } from "@opentui/core";
 import { useTheme } from "../../providers/theme";
+import type { ClientMessagePart } from "../../hooks/use-chat";
+import { Mode } from "@nightcode/database/enums";
 
 type Props = {
-    content: string;
+    parts: ClientMessagePart[];
     model: string;
+    mode: Mode;
+    duration?: string;
+    streaming?: boolean;
+    interrupted?: boolean;
 };
 
-export function BotMessage({ content, model }: Props) {
+export function BotMessage({
+    parts,
+    model,
+    mode,
+    duration,
+    streaming = false,
+    interrupted = false
+}: Props) {
     const { colors } = useTheme();
+    const text = parts
+        .filter((p) => p.type === "text")
+        .map((p) => p.text)
+        .join("");
 
     return (
         <box width="100%" alignItems="center">
             <box paddingY={1} width="100%">
                 <box paddingX={3} width="100%">
-                    <text>{content}</text>
+                    <text>{text}</text>
                 </box>
             </box>
 
@@ -28,9 +45,32 @@ export function BotMessage({ content, model }: Props) {
                     gap={2}
                 >
                     <text
-                        fg={colors.primary}
+                        attributes={interrupted ? TextAttributes.DIM : 0}
+                        fg={
+                            interrupted
+                                ? undefined
+                                : mode === Mode.PLAN ? colors.planMode : colors.primary
+                        }
                     >◉ </text>
-                    <text>{model}</text>
+                    <box flexDirection="row" gap={1}>
+                        <text attributes={interrupted ? TextAttributes.DIM : 0}>
+                            {mode === Mode.PLAN ? "Plan" : "Build"}
+                        </text>
+                        <text attributes={TextAttributes.DIM} fg={colors.dimSeparator}>
+                            ›
+                        </text>
+                        <text attributes={TextAttributes.DIM}>{model}</text>
+                        {(duration || interrupted) && (
+                            <>
+                                <text attributes={TextAttributes.DIM} fg={colors.dimSeparator}>
+                                    ›
+                                </text>
+                                <text attributes={TextAttributes.DIM}>
+                                    { interrupted ? "interrupted" : duration }
+                                </text>
+                            </>
+                        )}
+                    </box>
                 </box>
             </box>
         </box>

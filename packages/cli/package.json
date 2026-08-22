@@ -9,17 +9,20 @@
   "devDependencies": {
     "@types/bun": "latest",
     "@types/react": "^19.2.18",
-    "@nightcode/server": "workspace:*",
-    "@nightcode/shared": "workspace:*"
+    "@nightcode/server": "workspace:*"
   },
   "peerDependencies": {
     "typescript": "^5"
   },
   "dependencies": {
+    "@nightcode/database": "workspace:*",
+    "@nightcode/shared": "workspace:*",
     "@opentui/core": "^0.5.1",
     "@opentui/react": "^0.5.1",
+    "eventsource-parser": "^4.0.0",
     "hono": "^4.13.2",
     "opentui-spinner": "^0.0.7",
+    "pretty-ms": "^9.3.0",
     "react": "^19.2.6",
     "react-router": "^8.3.0",
     "zod": "^4.4.3"
